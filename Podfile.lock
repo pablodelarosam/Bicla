@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (4.6.0)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - EstimoteBluetoothScanning (0.2.0)
+  - EstimoteProximitySDK (0.11.3):
+    - EstimoteBluetoothScanning (~> 0.2.0)
+  - EstimoteSDK (4.27.0)
+  - FBSDKCoreKit (4.29.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.29.0):
+    - FBSDKCoreKit
+  - SlideMenuControllerSwift (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.6)
+  - EstimoteProximitySDK
+  - EstimoteSDK
+  - FBSDKLoginKit
+  - SlideMenuControllerSwift
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  EstimoteBluetoothScanning: d44e46ebebe4e0e2696c4577168cb8660b5d4ee9
+  EstimoteProximitySDK: a494cb2f73f62e409662feb21686969081816bf8
+  EstimoteSDK: 61935c7fbcb9fe93b97b0360351aef66fb1c338d
+  FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
+  FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
+  SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
+
+PODFILE CHECKSUM: 09038950c1c362de62e946f47243e93c60ccaa71
+
+COCOAPODS: 1.3.1

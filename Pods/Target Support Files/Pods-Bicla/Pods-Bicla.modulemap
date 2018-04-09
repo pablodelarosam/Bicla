@@ -1,0 +1,6 @@
+framework module Pods_Bicla {
+  umbrella header "Pods-Bicla-umbrella.h"
+
+  export *
+  module * { export * }
+}
