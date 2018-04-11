@@ -36,6 +36,9 @@
 		91E11545204CB66C00DD1861 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E11544204CB66C00DD1861 /* User.swift */; };
 		91E11547204D0EA400DD1861 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E11546204D0EA400DD1861 /* SignupViewController.swift */; };
 		AA1E14A15C985B38B1A0FD42 /* Pods_Bicla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF9330287A4E53B8975791E /* Pods_Bicla.framework */; };
+		C2C41ABB207DC76900FBBC0E /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C41ABA207DC76900FBBC0E /* News.swift */; };
+		C2C41ABD207DC7AC00FBBC0E /* NewsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C41ABC207DC7AC00FBBC0E /* NewsViewCell.swift */; };
+		C2C41ABF207DC7CA00FBBC0E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C41ABE207DC7CA00FBBC0E /* NewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,9 @@
 		91E11542204CB63E00DD1861 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		91E11544204CB66C00DD1861 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		91E11546204D0EA400DD1861 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		C2C41ABA207DC76900FBBC0E /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		C2C41ABC207DC7AC00FBBC0E /* NewsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewCell.swift; sourceTree = "<group>"; };
+		C2C41ABE207DC7CA00FBBC0E /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,9 +135,12 @@
 				9182BF1B2029FB4200A53998 /* RoutesViewController.swift */,
 				91E11542204CB63E00DD1861 /* Constants.swift */,
 				91C02E7A2056454E00C3E271 /* Place.swift */,
+				C2C41ABC207DC7AC00FBBC0E /* NewsViewCell.swift */,
+				C2C41ABE207DC7CA00FBBC0E /* NewsViewController.swift */,
 				91C02E7C2056649200C3E271 /* Event.swift */,
 				91E11544204CB66C00DD1861 /* User.swift */,
 				9126243E2079E4630075AE11 /* PartsCollectionViewCell.swift */,
+				C2C41ABA207DC76900FBBC0E /* News.swift */,
 				912624402079E4830075AE11 /* PartsViewController.swift */,
 				91C02E7E2056671F00C3E271 /* Location.swift */,
 				919026D52015A0EF00D4C871 /* RoadsTableViewCell.swift */,
@@ -321,6 +330,7 @@
 				917B7484203BF86600A0E50E /* ContentViewController.swift in Sources */,
 				919026DC2015B20E00D4C871 /* HomeViewController.swift in Sources */,
 				91AD7073201571EE007392D4 /* MapViewController.swift in Sources */,
+				C2C41ABF207DC7CA00FBBC0E /* NewsViewController.swift in Sources */,
 				91C02E7B2056454E00C3E271 /* Place.swift in Sources */,
 				91E1151F2043D46400DD1861 /* MenuViewController.swift in Sources */,
 				912624412079E4830075AE11 /* PartsViewController.swift in Sources */,
@@ -330,6 +340,8 @@
 				918A5F2D207547FD00EB3910 /* EstimoteViewController.swift in Sources */,
 				9126243F2079E4630075AE11 /* PartsCollectionViewCell.swift in Sources */,
 				91E115212043E23600DD1861 /* PageBaseViewController.swift in Sources */,
+				C2C41ABB207DC76900FBBC0E /* News.swift in Sources */,
+				C2C41ABD207DC7AC00FBBC0E /* NewsViewCell.swift in Sources */,
 				91132CEF204D2F7600A0ECE9 /* SupportViewController.swift in Sources */,
 				919026D62015A0EF00D4C871 /* RoadsTableViewCell.swift in Sources */,
 				9182BF20202A583D00A53998 /* LoginViewController.swift in Sources */,
