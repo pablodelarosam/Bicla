@@ -44,11 +44,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
        // check()
+        UINavigationBar.appearance().tintColor = UIColor.white
         tblMenuOptions.tableFooterView = UIView()
          print("Username", Constants.getUserName())
         
         userName.text! = Constants.getUserName()
-        userPhoto.image = UIImage(named: "logo")
+        userPhoto.image = UIImage(named: "logo_white")
+        userPhoto.layer.cornerRadius = 25
+        userPhoto.clipsToBounds = true 
         // Do any additional setup after loading the view.
     }
     
@@ -78,13 +81,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func updateArrayMenuOptions(){
-        arrayMenuOptions.append(["title":"Inicio", "icon":"ic_home"])
+        arrayMenuOptions.append(["title":"Descubre", "icon":"estacionamientos"])
         arrayMenuOptions.append(["title":"Inicio de sesión", "icon":"ic_navigation"])
-        arrayMenuOptions.append(["title":"¿Quienes somos?", "icon":"ic_help"])
-        arrayMenuOptions.append(["title":"Rodadas", "icon":"ic_directions_bike"])
-        arrayMenuOptions.append(["title":"Asistencia", "icon":"ic_build"])
+        arrayMenuOptions.append(["title":"¿Quienes somos?", "icon":"informacion"])
+        arrayMenuOptions.append(["title":"Trips", "icon":"descubre"])
+        arrayMenuOptions.append(["title":"Asistencia", "icon":"asistencia"])
+         arrayMenuOptions.append(["title":"Noticias", "icon":"noticias"])
         arrayMenuOptions.append(["title":"Compartir", "icon":"timeline"])
-        arrayMenuOptions.append(["title":"Cerrar sesión", "icon":"exit"])
+        arrayMenuOptions.append(["title":"Cerrar sesión", "icon":"cerrar_sesion"])
         
         tblMenuOptions.reloadData()
     }

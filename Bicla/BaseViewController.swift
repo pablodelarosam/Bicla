@@ -14,6 +14,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        UINavigationBar.appearance().tintColor = UIColor.white
     }
     
     override func didReceiveMemoryWarning() {
@@ -128,7 +129,9 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     
         
         let topViewController : UIViewController = self.navigationController!.topViewController!
+            self.navigationController?.navigationBar.barTintColor = UIColor.black
         
+    
         
         
         if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
@@ -144,7 +147,11 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         btnShowMenu.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         btnShowMenu.addTarget(self, action: #selector(BaseViewController.onSlideMenuButtonPressed(_:)), for: UIControlEvents.touchUpInside)
         let customBarItem = UIBarButtonItem(customView: btnShowMenu)
+        customBarItem.tintColor = UIColor.white
         self.navigationItem.leftBarButtonItem = customBarItem;
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+        self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
+    
     }
 
     func defaultMenuImage() -> UIImage {

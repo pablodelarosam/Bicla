@@ -35,6 +35,7 @@
 		91E11543204CB63E00DD1861 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E11542204CB63E00DD1861 /* Constants.swift */; };
 		91E11545204CB66C00DD1861 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E11544204CB66C00DD1861 /* User.swift */; };
 		91E11547204D0EA400DD1861 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E11546204D0EA400DD1861 /* SignupViewController.swift */; };
+		91E62F94207DC6C5007B0AB3 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E62F93207DC6C5007B0AB3 /* NewsViewController.swift */; };
 		AA1E14A15C985B38B1A0FD42 /* Pods_Bicla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF9330287A4E53B8975791E /* Pods_Bicla.framework */; };
 		C2C41ABB207DC76900FBBC0E /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C41ABA207DC76900FBBC0E /* News.swift */; };
 		C2C41ABD207DC7AC00FBBC0E /* NewsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C41ABC207DC7AC00FBBC0E /* NewsViewCell.swift */; };
@@ -127,6 +128,7 @@
 				917B7483203BF86600A0E50E /* ContentViewController.swift */,
 				91132CEE204D2F7600A0ECE9 /* SupportViewController.swift */,
 				917B7481203BF84A00A0E50E /* CarouselPageViewController.swift */,
+				91E62F93207DC6C5007B0AB3 /* NewsViewController.swift */,
 				91E1151C2043D46400DD1861 /* BaseViewController.swift */,
 				91E115202043E23600DD1861 /* PageBaseViewController.swift */,
 				91E115222043E3FD00DD1861 /* MenuPageViewController.swift */,
@@ -339,6 +341,7 @@
 				917B7482203BF84A00A0E50E /* CarouselPageViewController.swift in Sources */,
 				918A5F2D207547FD00EB3910 /* EstimoteViewController.swift in Sources */,
 				9126243F2079E4630075AE11 /* PartsCollectionViewCell.swift in Sources */,
+				91E62F94207DC6C5007B0AB3 /* NewsViewController.swift in Sources */,
 				91E115212043E23600DD1861 /* PageBaseViewController.swift in Sources */,
 				C2C41ABB207DC76900FBBC0E /* News.swift in Sources */,
 				C2C41ABD207DC7AC00FBBC0E /* NewsViewCell.swift in Sources */,
