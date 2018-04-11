@@ -23,6 +23,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UINavigationBar.appearance().tintColor = UIColor.white
         let loginButton = FBSDKLoginButton()
         
         emailField.delegate = self

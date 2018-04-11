@@ -34,6 +34,12 @@ class RoutesViewController: UIViewController, MKMapViewDelegate  {
         
         print("eventID", eventid)
         let parameters: Parameters = ["idEvent": self.eventid]
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
+            "Accept": "application/json"
+        ]
+        
         Alamofire.request("http://ec2-54-86-142-141.compute-1.amazonaws.com/api/v0/locations", method: .get,  parameters: parameters,  encoding: URLEncoding.default)
             .responseJSON { response in
                 

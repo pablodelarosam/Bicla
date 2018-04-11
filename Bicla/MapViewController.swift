@@ -37,6 +37,7 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addSlideMenuButton()
+        UINavigationBar.appearance().tintColor = UIColor.white
         mapView.delegate = self
         mapView.showsCompass = true
         mapView.showsScale = true
@@ -198,6 +199,7 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "MyPin"
+        let secondPin = "Pin"
         
         if annotation.isKind(of: MKUserLocation.self) {
             return nil
@@ -219,10 +221,18 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
             annotationView?.canShowCallout = true
             annotationView?.image = UIImage(named: "logo_white")
         } else {
-             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "myAnnotation") as? MKPinAnnotationView
+            var annotationView:MKAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: secondPin)
+            if annotationView == nil {
+                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: secondPin)
+                annotationView?.canShowCallout = true
+            }
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            annotationView?.canShowCallout = true
+            annotationView?.image = UIImage(named: "ping")
+          /*   var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "myAnnotation") as? MKPinAnnotationView
             annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
-            annotationView?.canShowCallout = true
+            annotationView?.canShowCallout = true*/
             
             return annotationView
         

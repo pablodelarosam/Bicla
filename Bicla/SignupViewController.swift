@@ -19,7 +19,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UINavigationBar.appearance().tintColor = UIColor.white
         nameField.delegate = self
         lastName.delegate = self
         password.delegate = self

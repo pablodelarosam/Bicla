@@ -22,7 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        UINavigationBar.appearance().barTintColor = UIColor.black
+        UINavigationBar.appearance().backgroundColor = UIColor.black
+        UINavigationBar.appearance().tintColor = UIColor.white
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.delegate = self
         notificationCenter.requestAuthorization(options: [.alert, .sound]) { granted, error in
