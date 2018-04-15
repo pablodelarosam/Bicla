@@ -47,9 +47,14 @@ class MenuPageViewController: UIViewController, UITableViewDataSource, UITableVi
         // Do any additional setup after loading the view.
         updateArrayMenuOptions()
          tblMenuOptions.reloadData()
-        print("Username", Constants.getUserName())
+        if let nameUser = Constants.getUserName()  {
+            print("Username", nameUser)
+            
+            userName.text! = nameUser
+        } else {
+            userName.text! = "Bicla"
+        }
         
-        userName.text! = Constants.getUserName()
         userPhoto.image = UIImage(named: "logo")
     }
     

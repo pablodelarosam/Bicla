@@ -36,6 +36,15 @@ struct Constants {
         static let Photo = "photo"
     }
     
+    struct NewKeys {
+        
+        static let Description = "description"
+        static let iDnews = "idnews"
+        static let Imagen = "imagen"
+        static let Title = "title"
+   
+    }
+    
     struct EventKeys {
         static let Duration = "duration"
         static let Title = "title"
@@ -144,9 +153,12 @@ struct Constants {
         return id
     }
     
-    static func getUserName() -> String{
+    static func getUserName() -> String? {
         let sharedPref = UserDefaults.standard
         let id = sharedPref.string(forKey:"nombre" )
+        if(id == nil){
+            return "Bicla"
+        }
         return id!
     }
 

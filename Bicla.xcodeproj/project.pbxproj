@@ -28,6 +28,7 @@
 		91C02E7B2056454E00C3E271 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C02E7A2056454E00C3E271 /* Place.swift */; };
 		91C02E7D2056649200C3E271 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C02E7C2056649200C3E271 /* Event.swift */; };
 		91C02E7F2056671F00C3E271 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C02E7E2056671F00C3E271 /* Location.swift */; };
+		91CB90EB2081ADF2006CB672 /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CB90EA2081ADF2006CB672 /* EventAnnotation.swift */; };
 		91E1151E2043D46400DD1861 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1151C2043D46400DD1861 /* BaseViewController.swift */; };
 		91E1151F2043D46400DD1861 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1151D2043D46400DD1861 /* MenuViewController.swift */; };
 		91E115212043E23600DD1861 /* PageBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E115202043E23600DD1861 /* PageBaseViewController.swift */; };
@@ -36,6 +37,8 @@
 		91E11545204CB66C00DD1861 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E11544204CB66C00DD1861 /* User.swift */; };
 		91E11547204D0EA400DD1861 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E11546204D0EA400DD1861 /* SignupViewController.swift */; };
 		91E62F94207DC6C5007B0AB3 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E62F93207DC6C5007B0AB3 /* NewsViewController.swift */; };
+		91F431022081DED700736896 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F431012081DED700736896 /* NewsCollectionViewCell.swift */; };
+		91F431042081E12F00736896 /* New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F431032081E12F00736896 /* New.swift */; };
 		AA1E14A15C985B38B1A0FD42 /* Pods_Bicla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF9330287A4E53B8975791E /* Pods_Bicla.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +71,7 @@
 		91C02E7A2056454E00C3E271 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		91C02E7C2056649200C3E271 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		91C02E7E2056671F00C3E271 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		91CB90EA2081ADF2006CB672 /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
 		91E1151C2043D46400DD1861 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		91E1151D2043D46400DD1861 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		91E115202043E23600DD1861 /* PageBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBaseViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 		91E11544204CB66C00DD1861 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		91E11546204D0EA400DD1861 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		91E62F93207DC6C5007B0AB3 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		91F431012081DED700736896 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		91F431032081E12F00736896 /* New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = New.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,7 @@
 				918A5F2C207547FD00EB3910 /* EstimoteViewController.swift */,
 				919026DB2015B20E00D4C871 /* HomeViewController.swift */,
 				919026D320159E7C00D4C871 /* RoadsTripTableViewController.swift */,
+				91CB90EA2081ADF2006CB672 /* EventAnnotation.swift */,
 				917B7483203BF86600A0E50E /* ContentViewController.swift */,
 				91132CEE204D2F7600A0ECE9 /* SupportViewController.swift */,
 				917B7481203BF84A00A0E50E /* CarouselPageViewController.swift */,
@@ -132,9 +139,11 @@
 				9182BF1B2029FB4200A53998 /* RoutesViewController.swift */,
 				91E11542204CB63E00DD1861 /* Constants.swift */,
 				91C02E7A2056454E00C3E271 /* Place.swift */,
+				91F431032081E12F00736896 /* New.swift */,
 				91C02E7C2056649200C3E271 /* Event.swift */,
 				91E11544204CB66C00DD1861 /* User.swift */,
 				9126243E2079E4630075AE11 /* PartsCollectionViewCell.swift */,
+				91F431012081DED700736896 /* NewsCollectionViewCell.swift */,
 				912624402079E4830075AE11 /* PartsViewController.swift */,
 				91C02E7E2056671F00C3E271 /* Location.swift */,
 				919026D52015A0EF00D4C871 /* RoadsTableViewCell.swift */,
@@ -289,7 +298,9 @@
 				"${PODS_ROOT}/EstimoteProximitySDK/EstimoteProximitySDK/EstimoteProximitySDK.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/XLActionController/XLActionController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -299,7 +310,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EstimoteProximitySDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLActionController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -313,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91F431042081E12F00736896 /* New.swift in Sources */,
 				919026D420159E7C00D4C871 /* RoadsTripTableViewController.swift in Sources */,
 				9182BF1C2029FB4200A53998 /* RoutesViewController.swift in Sources */,
 				91E115232043E3FD00DD1861 /* MenuPageViewController.swift in Sources */,
@@ -328,11 +342,13 @@
 				91E1151F2043D46400DD1861 /* MenuViewController.swift in Sources */,
 				912624412079E4830075AE11 /* PartsViewController.swift in Sources */,
 				91C02E7F2056671F00C3E271 /* Location.swift in Sources */,
+				91F431022081DED700736896 /* NewsCollectionViewCell.swift in Sources */,
 				91E11547204D0EA400DD1861 /* SignupViewController.swift in Sources */,
 				917B7482203BF84A00A0E50E /* CarouselPageViewController.swift in Sources */,
 				918A5F2D207547FD00EB3910 /* EstimoteViewController.swift in Sources */,
 				9126243F2079E4630075AE11 /* PartsCollectionViewCell.swift in Sources */,
 				91E62F94207DC6C5007B0AB3 /* NewsViewController.swift in Sources */,
+				91CB90EB2081ADF2006CB672 /* EventAnnotation.swift in Sources */,
 				91E115212043E23600DD1861 /* PageBaseViewController.swift in Sources */,
 				91132CEF204D2F7600A0ECE9 /* SupportViewController.swift in Sources */,
 				919026D62015A0EF00D4C871 /* RoadsTableViewCell.swift in Sources */,

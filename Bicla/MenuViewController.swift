@@ -14,6 +14,9 @@ protocol SlideMenuDelegate {
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var lblTitle : UILabel = UILabel()
+    var imgIcon : UIImageView = UIImageView()
+    
     @IBOutlet weak var userPhoto: UIImageView!
     @IBOutlet weak var userName: UILabel!
     /**
@@ -46,9 +49,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
        // check()
         UINavigationBar.appearance().tintColor = UIColor.white
         tblMenuOptions.tableFooterView = UIView()
-         print("Username", Constants.getUserName())
-        
-        userName.text! = Constants.getUserName()
+        if let nameUser = Constants.getUserName()  {
+            print("Username", nameUser)
+            
+            userName.text! = nameUser
+        } else {
+            userName.text! = "Bicla"
+        }
+     
         userPhoto.image = UIImage(named: "logo_white")
         userPhoto.layer.cornerRadius = 25
         userPhoto.clipsToBounds = true 
@@ -67,24 +75,31 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateArrayMenuOptions()
-     //   check()
+        
+        check()
     }
     
     func check(){
         if Constants.checkSession() {
             print(arrayMenuOptions)
-            arrayMenuOptions.remove(at: 1)
+         //  arrayMenuOptions.append(["title":"Cerrar sesión", "icon":"cerrar_sesion"])
+                let indexPathg = NSIndexPath(row: 1, section: 0)
+            
+        
+        //    tblMenuOptions.cellForRow(at: 1)?.isHidden = true
             /* let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
              let newViewController = storyBoard.instantiateViewController(withIdentifier: "Login")
              self.present(newViewController, animated: true, completion: nil)*/
+        } else {
+             arrayMenuOptions.remove(at: 7)
         }
     }
     
     func updateArrayMenuOptions(){
-        arrayMenuOptions.append(["title":"Descubre", "icon":"estacionamientos"])
-        arrayMenuOptions.append(["title":"Inicio de sesión", "icon":"ic_navigation"])
-        arrayMenuOptions.append(["title":"¿Quienes somos?", "icon":"informacion"])
-        arrayMenuOptions.append(["title":"Trips", "icon":"descubre"])
+        arrayMenuOptions.append(["title":"Descubre", "icon":"descubre"])
+        arrayMenuOptions.append(["title":"Inicio de sesión", "icon":"account"])
+        arrayMenuOptions.append(["title":"¿Quiénes somos?", "icon":"informacion"])
+        arrayMenuOptions.append(["title":"Trips", "icon":"estacionamientos"])
         arrayMenuOptions.append(["title":"Asistencia", "icon":"asistencia"])
          arrayMenuOptions.append(["title":"Noticias", "icon":"noticias"])
         arrayMenuOptions.append(["title":"Compartir", "icon":"timeline"])
@@ -122,11 +137,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.preservesSuperviewLayoutMargins = false
         cell.backgroundColor = UIColor.clear
         
-        let lblTitle : UILabel = cell.contentView.viewWithTag(101) as! UILabel
-        let imgIcon : UIImageView = cell.contentView.viewWithTag(100) as! UIImageView
+        lblTitle = cell.contentView.viewWithTag(101) as! UILabel
+         imgIcon = cell.contentView.viewWithTag(100) as! UIImageView
         
         imgIcon.image = UIImage(named: arrayMenuOptions[indexPath.row]["icon"]!)
         lblTitle.text = arrayMenuOptions[indexPath.row]["title"]!
+        
+        
         
         return cell
     }
@@ -143,5 +160,30 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
+    }
+    
+    func tableView(_ tableView: UITableView,
+                            heightForRowAt indexPath: IndexPath) -> CGFloat{
+        let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellMenu")!
+        if(indexPath.row == 1){
+            if Constants.checkSession() {
+                print(arrayMenuOptions)
+                //  arrayMenuOptions.append(["title":"Cerrar sesión", "icon":"cerrar_sesion"])
+                self.lblTitle.text = ""
+                self.imgIcon.isHidden = true
+                return 0
+                /* let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "Login")
+                 self.present(newViewController, animated: true, completion: nil)*/
+            } else {
+                
+            }
+        }
+        
+        
+      
+        
+        return 50
+        
     }
 }

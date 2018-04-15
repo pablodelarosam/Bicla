@@ -9,8 +9,10 @@
 import UIKit
 
 class PartsCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var typw: UILabel!
+    @IBOutlet weak var typw: UIImageView!
     
     @IBOutlet weak var check: UIButton!
+    
+    @IBOutlet weak var namePart: UILabel!
     
 }

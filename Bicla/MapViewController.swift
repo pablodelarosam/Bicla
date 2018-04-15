@@ -9,11 +9,14 @@
 import UIKit
 import MapKit
 import Alamofire
+import XLActionController
 
 class MapViewController: BaseViewController, MKMapViewDelegate {
     
     var mainViewController : UIViewController!
     var places:[Place] = [Place]()
+    
+    var flag = true
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -32,6 +35,11 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
     
     var images = ["pci", "udlap-img", "rosarito"]
     
+    var counter = 0
+    
+    var companies = ["AAPL" : "Apple Inc", "GOOG" : "Google Inc", "AMZN" : "Amazon.com, Inc", "FB" : "Facebook Inc"]
+    
+    var descriptionsPlaces: [String:String] = [String: String]()
   
 
     override func viewDidLoad() {
@@ -39,6 +47,7 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
         self.addSlideMenuButton()
         UINavigationBar.appearance().tintColor = UIColor.white
         mapView.delegate = self
+        self.mapView.delegate = self
         mapView.showsCompass = true
         mapView.showsScale = true
         mapView.showsTraffic = true
@@ -112,6 +121,8 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
                                     let annotation = MKPointAnnotation()
                                     annotation.title = self.places[i].name
                                     annotation.subtitle = self.places[i].model
+                                    self.descriptionsPlaces[self.places[i].name!] = self.places[i].description
+                                  //  annotation. = self.places[i].description
                                     
                                     
                                     
@@ -251,7 +262,7 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
             mapView.deselectAnnotation(view.annotation, animated: false)
             // Get restaurant
             for i in 0..<places.count {
-                
+           
                 //var restaurant: Restaurant!
                // restaurant = self.restaurants[i]
                 let lat = view.annotation?.coordinate.latitude
@@ -268,6 +279,67 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
         }
     }
     
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        // first ensure that it really is an EventAnnotation:
+       // presentBottomSheet()
+        print("dictionary", self.descriptionsPlaces)
+        if let eventAnnotation = view.annotation as? MKAnnotation {
+            //let theEvent = eventAnnotation.idEvent
+            print("counter", counter)
+            if(counter > 2){
+                let actionSheet = TwitterActionController()
+                actionSheet.backgroundView.tintColor = UIColor.black
+                // set up a header title
+               actionSheet.collectionView.visibleCells
+                // self.presentBottomSheet()
+                for (key, value) in descriptionsPlaces {
+                    print("\(key) = \(value)")
+                    if(eventAnnotation.title!! == key) {
+                        actionSheet.headerData = "Info"
+                        // Add some actions, note that the first parameter of `Action` initializer is `ActionData`.
+                        
+                        
+                       
+                        actionSheet.addAction(Action(ActionData(title: eventAnnotation.title!!, subtitle: value, image: UIImage(named: "store")!), style: .default, handler: { action in
+                            //do something useful
+                            print("ok")
+                        }))
+                         present(actionSheet, animated: true, completion: nil)
+                    }
+                }
+                
+             
+            }
+           counter = counter + 1
+            // now do somthing with your event
+        }
+     //   print("selected", selectedAnnotation!.)
+        let button = UIButton(frame: .zero)
+        button.setTitle("Button", for: UIControlState.normal)
+        button.backgroundColor = UIColor.red
+        button.addTarget(self, action: #selector(presentBottomSheet), for: .touchUpInside)
+        self.view.addSubview(button)
+     
+    }
+    
+    @objc func presentBottomSheet() {
+      //  print("clicked")
+        // Instantiate custom action sheet controller
+        let actionSheet = TwitterActionController()
+        actionSheet.backgroundView.tintColor = UIColor.black
+        
+        // set up a header title
+        actionSheet.headerData = "Info"
+        // Add some actions, note that the first parameter of `Action` initializer is `ActionData`.
+      
+        actionSheet.addAction(Action(ActionData(title: "Xmartlabs", subtitle: "@xmartlabs", image: UIImage(named: "store")!), style: .default, handler: { action in
+           //do something useful
+            print("ok")
+        }))
+        present(actionSheet, animated: true, completion: nil)
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -290,20 +362,7 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
         mapItem.name = placeName
         mapItem.openInMaps(launchOptions: options)
     }
-    
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        
-    }
-    
-    @objc func goMaps() {
- for i in 0..<self.places.count {
-    for j in 0..<self.places[i].latlon.count {
-        openMapForPlace(lat: self.places[i].latlon[0], long: self.places[i].latlon[1], placeName: self.places[i].name!)
-
-    }
-        }
-}
-    
+  
 
     
 
@@ -318,3 +377,97 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
     */
 
 }
+
+// As first step we should extend the ActionController generic type
+public class TwitterActionController: ActionController<TwitterCell, ActionData, TwitterActionControllerHeader, String, UICollectionReusableView, Void> {
+    
+    // override init in order to customize behavior and animations
+    public override init(nibName nibNameOrNil: String? = nil, bundle nibBundleOrNil: Bundle? = nil) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        // customizing behavior and present/dismiss animations
+        settings.behavior.hideOnScrollDown = false
+        settings.animation.scale = nil
+        settings.animation.present.duration = 0.6
+        settings.animation.dismiss.duration = 0.5
+        settings.animation.dismiss.options = .curveEaseIn
+        settings.animation.dismiss.offset = 30
+        
+        // providing a specific collection view cell which will be used to display each action, height parameter expects a block that returns the cell height for a particular action.
+        cellSpec = .nibFile(nibName: "TwitterCell", bundle: Bundle(for: TwitterCell.self), height: { _ in 160})
+        // providing a specific view that will render each section header.
+        
+     //   sectionHeaderSpec?.height.(10.0)
+    
+        sectionHeaderSpec = .cellClass(height: { _ in 0 })
+        // providing a specific view that will render the action sheet header. We calculate its height according the text that should be displayed.
+        
+    
+        
+        headerSpec = .cellClass(height: { [weak self] (headerData: String) in
+            guard let me = self else { return 0 }
+           
+            return 0 + 0
+        })
+        
+        // once we specify the views, we have to provide three blocks that will be used to set up these views.
+        // block used to setup the header. Header view and the header are passed as block parameters
+      onConfigureHeader = { [weak self] header, headerData in
+            guard let me = self else { return }
+            header.backgroundColor = UIColor.black
+            header.tintColor = UIColor.black
+        
+          /*  header.accessibilityLabel.frame = CGRect(x: 0, y: 0, width: me.view.frame.size.width - 40, height: CGFloat.greatestFiniteMagnitude)
+            header.label.text = headerData
+            header.label.sizeToFit()
+            header.label.center = CGPoint(x: header.frame.size.width  / 2, y: header.frame.size.height / 2)
+ */
+        }
+        // block used to setup the section header
+        onConfigureSectionHeader = { sectionHeader, sectionHeaderData in
+            sectionHeader.backgroundColor = UIColor.black
+            sectionHeader.tintColor = UIColor.black
+            sectionHeaderData
+        }
+        // block used to setup the collection view cell
+        onConfigureCellForAction = { [weak self] cell, action, indexPath in
+            cell.setup(action.data?.title, detail:action.data?.subtitle, image: action.data?.image)
+            
+            //action.data?.image?
+            cell.separatorView?.isHidden = indexPath.item == self!.collectionView.numberOfItems(inSection: indexPath.section) - 3
+            cell.alpha = action.enabled ? 1.0 : 0.5
+            cell.contentView.backgroundColor = UIColor.black
+            cell.actionTitleLabel?.textColor = UIColor.white
+            cell.actionTitleLabel?.font = .systemFont(ofSize: 27.0)
+            let maxSize = CGSize(width: 250, height: 500)
+            let size = cell.actionDetailLabel?.sizeThatFits(maxSize)
+            cell.actionDetailLabel?.frame = CGRect(origin: CGPoint(x: 100, y: 100), size: size!)
+            cell.actionDetailLabel?.sizeToFit()
+            cell.actionDetailLabel?.numberOfLines = 5
+            cell.actionTitleLabel?.adjustsFontSizeToFitWidth = true
+            cell.actionDetailLabel?.adjustsFontSizeToFitWidth = true
+            cell.actionDetailLabel?.textColor = UIColor.white
+            
+    
+             cell.actionDetailLabel?.font = .systemFont(ofSize: 20.0)
+         
+            
+        
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+        {
+            return CGSize(width: 100.0, height: 100.0)
+        }
+    
+        
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+
+
+

@@ -26,15 +26,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>5</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Our Estimote Monitoring works in background, so we need you to select &quot;Always Allow&quot;, so as to  fully experience all possibilities of this template. (You can change this message in the Info.plist file.)</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Our Estimote Monitoring works in background, so we need you to select &quot;Always Allow&quot;, so as to  fully experience all possibilities of this template. (You can change this message in the Info.plist file.)</string>
-	<key>NSLocationUsageDescription</key>
-	<string>Our Estimote Monitoring works in background, so we need you to select &quot;Always Allow&quot;, so as to  fully experience all possibilities of this template. (You can change this message in the Info.plist file.)</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Our Estimote Monitoring works in background, so we need you to select &quot;Always Allow&quot;, so as to  fully experience all possibilities of this template. (You can change this message in the Info.plist file.)</string>
+	<string>9</string>
 	<key>FacebookAppID</key>
 	<string>937134669794577</string>
 	<key>FacebookDisplayName</key>
@@ -53,6 +45,14 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Our Estimote Monitoring works in background, so we need you to select "Always Allow", so as to  fully experience all possibilities of this template. (You can change this message in the Info.plist file.)</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Our Estimote Monitoring works in background, so we need you to select "Always Allow", so as to  fully experience all possibilities of this template. (You can change this message in the Info.plist file.)</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Our Estimote Monitoring works in background, so we need you to select "Always Allow", so as to  fully experience all possibilities of this template. (You can change this message in the Info.plist file.)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Our Estimote Monitoring works in background, so we need you to select "Always Allow", so as to  fully experience all possibilities of this template. (You can change this message in the Info.plist file.)</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>
@@ -68,8 +68,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

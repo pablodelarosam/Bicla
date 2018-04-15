@@ -36,6 +36,8 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         case 1:
             print("Inicio de sesión\n", terminator: "")
             
+          //  check()
+            
             self.openViewControllerBasedOnIdentifier("Login")
             
             break
@@ -77,8 +79,24 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             break
             
         case 5:
-            print("Share\n", terminator: "")
+            print("News\n", terminator: "")
+            self.openViewControllerBasedOnIdentifier("News")
             // text to share
+           /* let text = "Descubre las mejores rodadas de toda Puebla con Bicla, invita a tus amigos a descargar la app, https://play.google.com/store/apps/details?id=mx.com.bicla.biclaandroid"
+            
+            // set up activity view controller
+            let objectsToShare: [AnyObject] = [ text as AnyObject ]
+            let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+            
+            // present the view controller
+            
+            self.present(activityViewController, animated: true, completion: nil)
+            */
+            break
+            
+        case 6:
+            print("Ca\n", terminator: "")
             let text = "Descubre las mejores rodadas de toda Puebla con Bicla, invita a tus amigos a descargar la app, https://play.google.com/store/apps/details?id=mx.com.bicla.biclaandroid"
             
             // set up activity view controller
@@ -90,15 +108,15 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             
             self.present(activityViewController, animated: true, completion: nil)
             
+    
+            
             break
             
-        case 6:
-            print("Ca\n", terminator: "")
+        case 7:
             
-            //   self.openViewControllerBasedOnIdentifier("Ask")
             logouts()
             
-            break
+            
         default:
             print("default\n", terminator: "")
         }
@@ -121,6 +139,15 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
       let next = self.storyboard?.instantiateViewController(withIdentifier: "navMap") as? UINavigationController
         self.present(next!, animated: true, completion: nil)
         
+    }
+    
+    func check(){
+        if Constants.checkSession() {
+            self.openViewControllerBasedOnIdentifier("Login")
+            /* let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+             let newViewController = storyBoard.instantiateViewController(withIdentifier: "Login")
+             self.present(newViewController, animated: true, completion: nil)*/
+        }
     }
     
     func openViewControllerBasedOnIdentifier(_ strIdentifier:String){
