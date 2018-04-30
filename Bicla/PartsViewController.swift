@@ -24,7 +24,7 @@ class PartsViewController: BaseViewController, UICollectionViewDelegate, UIColle
 var unchecked = false
     
     var types = ["pedal2", "pedal", "asiento", "llanta","manubrio", "cadena"]
-    
+
     var typest = ["Pedal", "Freno", "Asiento", "Llanta","Manubrio", "Cadena"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +69,7 @@ var unchecked = false
        // cell.check.setImage(UIImage(named:"check-box"), for: .normal)
         print("selected")
     }
+
     
     func dd(){
         

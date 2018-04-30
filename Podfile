@@ -9,8 +9,6 @@ target 'Bicla' do
    pod 'FBSDKLoginKit'
    pod 'SlideMenuControllerSwift'
    pod 'Alamofire', '~> 4.6'
-   pod 'EstimoteSDK'
-   pod 'EstimoteProximitySDK'
    pod 'XLActionController'
    pod 'XLActionController/Twitter'
    pod 'Kingfisher', '~> 4.0'
